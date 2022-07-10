@@ -9,6 +9,7 @@ import { MoviesService } from '../../services/movies.service';
 })
 export class MoviesComponent implements OnInit {
   movies: Movie[] = [];
+  searchValue: string = '';
 
   constructor(private moviesService: MoviesService) {}
 
@@ -24,5 +25,9 @@ export class MoviesComponent implements OnInit {
 
   paginate(event: any) {
     this.getPagedMovies(event.page + 1);
+  }
+
+  searchChanged() {
+    console.log(this.searchValue)
   }
 }
